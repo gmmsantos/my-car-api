@@ -1,0 +1,26 @@
+[
+    {
+        "license_plate": "aaa-2222",
+        "model": "celta",
+        "name": "car1",
+        "year": "2007"
+    },
+    {
+        "license_plate": "aaa-3333",
+        "model": "celta",
+        "name": "car2",
+        "year": "2007"
+    },
+    {
+        "license_plate": "aaa-4444",
+        "model": "celta",
+        "name": "car3",
+        "year": "2007"
+    },
+    {
+        "license_plate": "aaa-1111",
+        "model": "celta",
+        "name": "car4",
+        "year": "2007"
+    }
+]
