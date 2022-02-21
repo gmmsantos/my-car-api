@@ -1,9 +1,9 @@
 [
     {
         "license_plate": "aaa-2222",
-        "model": "celta",
+        "model": "Fusca",
         "name": "car1",
-        "year": "2007"
+        "year": "1969"
     },
     {
         "license_plate": "aaa-3333",
@@ -13,14 +13,14 @@
     },
     {
         "license_plate": "aaa-4444",
-        "model": "celta",
+        "model": "Escort",
         "name": "car3",
-        "year": "2007"
+        "year": "1995"
     },
     {
         "license_plate": "aaa-1111",
-        "model": "celta",
+        "model": "uno",
         "name": "car4",
-        "year": "2007"
+        "year": "2010"
     }
 ]

@@ -1,5 +1,3 @@
-from crypt import methods
-import logging
 from flask import Flask, jsonify, request
 from data.car_details import cars
 import json
@@ -26,7 +24,7 @@ def api_all():
 
 
 # Route to filter a Car using the License Plate.
-@app.route("/api/v1/resources/cars", methods=["GET", "POST", "DELETE"])
+@app.route("/api/v1/resources/cars", methods=["GET", "POST", "PUT", "DELETE"])
 def api_car():
     if request.method == "GET":
         if len(request.args) == 0:
@@ -39,8 +37,6 @@ def api_car():
                 for key in request.args.keys():
                     # print(car[key])
                     # print(request.args[key])
-                    data_value = car[key]
-                    query_value = request.args[key]
                     if car[key] == request.args[key]:
                         continue
                     else:
@@ -56,8 +52,6 @@ def api_car():
         license_plate = request.get_json()["license_plate"]
 
         for car in cars:
-            print(car)
-            print(cars)
             if car["license_plate"] == license_plate:
                 return "The Car already exists."
         cars.append(request.get_json())
@@ -65,6 +59,24 @@ def api_car():
         dump_data(cars)
 
         return "POST Registered"
+
+    if request.method == "PUT":
+        license_plate = request.args["license_plate"]
+
+        for car in cars:
+            if car["license_plate"] == license_plate:
+                for key in request.args.keys():
+                    if key is None:
+                        print("The " + key + " is Null!")
+                        continue
+                    else:
+                        car[key] = request.args[key]
+                dump_data(cars)
+
+            # else:
+            #     return "Please inform a valid license-plate!"
+
+        return "Updated"
 
     if request.method == "DELETE":
         if "license_plate" in request.args:
