@@ -72,11 +72,9 @@ def api_car():
                     else:
                         car[key] = request.args[key]
                 dump_data(cars)
+                return "Updated"
 
-            # else:
-            #     return "Please inform a valid license-plate!"
-
-        return "Updated"
+        return "Please inform a valid license-plate!"
 
     if request.method == "DELETE":
         if "license_plate" in request.args:
